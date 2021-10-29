@@ -234,7 +234,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   }
 
-  await apiClient.get('/users')
+  const courses = await apiClient.get('/courses')
+
 
   return {
     props: {}

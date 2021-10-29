@@ -11,7 +11,7 @@ type User = {
 }
 
 type SignInData = {
-    email: string;
+    username: string;
     password: string;
 }
 
@@ -47,10 +47,10 @@ export function AuthProvider({ children }){
     }, [])
 
 
-    async function signIn({email, password}: SignInData){
+    async function signIn({username, password}: SignInData){
         // Aqui chamamos a API e retornamos o jwt
         const { token, user } = await signInRequest({
-            email,
+            username,
             password,
         })
         
